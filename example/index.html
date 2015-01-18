@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.9/angular.min.js"></script>
+		<script src="../src/angular-hmac-sha512.js"></script>
+		<title>angular-hmac-sha512 demo</title>
+		<link rel="stylesheet" href="">
+		<style type="text/css">
+			body {
+				padding-top: 50px;
+			}
+		</style>
+	</head>
+	<body>
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="/angular-hmac-sha5122/example">angular-hmac-sha512 demo</a>
+				</div>
+				<div id="navbar" class="collapse navbar-collapse pull-right">
+					<ul class="nav navbar-nav">
+						<li class="active"><a href="/angular-hmac-sha5122/example">Home</a></li>
+						<li><a href="https://github.com/diablofong/angular-hmac-sha512">View GitHub</a></li>
+						<li><a href="https://github.com/diablofong/angular-hmac-sha512/archive/master.zip">Download</a></li>
+					</ul>
+					</div><!--/.nav-collapse -->
+				</div>
+			</nav>
+			<div class="container">
+				<div class="starter-template">
+					<h1>angular-hmac-sha512</h1>
+					<p class="lead">AngularJS Module. A Simple Service to Encrypt Use Hmac-sha512.</p>
+				</div>
+				<hr>
+				<div ng-controller="demo_nosecret">
+					<h3>Use Empty Secret!</h3>
+				<form class="form-horizontal">
+  					<div class="form-group">
+    				<label for="inputEmail3" class="col-sm-2 control-label">Plan Text</label>
+    					<div class="col-sm-8">
+      						<input type="text" class="form-control" ng-model="plantext">
+    					</div>
+  					</div>
+    				<div class="form-group">
+    				<label for="inputEmail3" class="col-sm-2 control-label">Encrypt Text</label>
+    					<div class="col-sm-8">
+      						<textarea class="form-control well" ng-model="encrypttext"></textarea> 
+    					</div>
+  					<button class="btn btn-default" ng-click="execute()">Encrypt</button>
+  					</div>
+				</form>	
+				</div>
+				<hr>
+				<div ng-controller="demo_secret">
+					<h3>Use Secret!</h3>
+				<form class="form-horizontal">
+  					<div class="form-group">
+    				<label for="inputEmail3" class="col-sm-2 control-label">Plan Text</label>
+    					<div class="col-sm-8">
+      						<input type="text" class="form-control" ng-model="plantext">
+    					</div>
+  					</div>
+  					<div class="form-group">
+    				<label for="inputEmail3" class="col-sm-2 control-label">Secret Key</label>
+    					<div class="col-sm-8">
+      						<input type="text" class="form-control" ng-model="secret"> 
+    					</div>
+  					</div>
+    				<div class="form-group">
+    				<label for="inputEmail3" class="col-sm-2 control-label">Encrypt Text</label>
+    					<div class="col-sm-8">
+      						<textarea class="form-control well" ng-model="encrypttext2"></textarea> 
+    					</div>
+					<button class="btn btn-default" ng-click="execute()">Encrypt</button>
+  					</div>
+				</form>	
+				</div>
+				<hr>
+				<footer class="footer">
+      				<div class="container">
+        				<p class="text-muted">&copy; diablofong 2015</p>
+      				</div>
+    			</footer>
+			</div><!-- /.container -->
+				
+			<script type="text/javascript">
+				
+				var App = angular.module('myApp', ['angular-hmac-sha512']);
+				
+				//empty secret 
+				App.controller('demo_nosecret', ['$scope','$crypthmac',function($scope,$crypthmac){
+					$scope.execute = function () {
+						var encrypttext = $crypthmac.encrypt($scope.plantext,"");
+						console.log(encrypttext);
+						$scope.encrypttext = encrypttext;
+					};
+				}]);
+				
+				//not empty secret
+				App.controller('demo_secret', ['$scope','$crypthmac',function($scope,$crypthmac){
+					$scope.execute = function () {
+						var encrypttext2 = $crypthmac.encrypt($scope.plantext2,$scope.secret);
+						console.log(encrypttext2);
+						$scope.encrypttext2 = encrypttext2;
+					};
+				}]);
+
+			</script>
+			</body>
+		</html>

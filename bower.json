@@ -1,0 +1,22 @@
+{
+  "name": "angular-hmac-sha512",
+  "main": "angular-hmac-sha512.js",
+  "version": "1.0.0",
+  "authors": [
+    "duncan <diablofong@gmail.com>"
+  ],
+  "description": "AngularJS Module. A Simple Service to Encrypt Use Hmac-sha512.",
+  "keywords": [
+    "Angularjs",
+    "Crypto-js",
+    "Hmac-sha512"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
