@@ -1,13 +1,13 @@
 # angular-hmac-sha512
--
+
 AngularJS Module. that integrate cryptography functionality offers from the [crypto-js](https://code.google.com/p/crypto-js/) project. A Simple Service to Encrypt Use Hmac-sha512.
 
 #required
--
+
 - [AngularJS 1.1.4 + ](http://angularjs.org/) (tested with 1.3.9)
 
 #install(bower)
--
+
 * bower install angular-hmac-sha512
 
 ```html
@@ -15,7 +15,7 @@ AngularJS Module. that integrate cryptography functionality offers from the [cry
 ```
 
 #install(manual)
--
+
 * download [angular-hmac-sha512.js file](https://github.com/diablofong/angular-hmac-sha512/blob/master/src/angular-hmac-sha512.js)
 * added javascript file to your app html file
 
@@ -24,7 +24,7 @@ AngularJS Module. that integrate cryptography functionality offers from the [cry
 ```
 
 #usage
--
+
 - add encrypt module to angular
 
 ```javascript
@@ -58,9 +58,9 @@ AngularJS Module. that integrate cryptography functionality offers from the [cry
 ```
 
 #demo
--
+
 ###[demo site]()
 
 #License
--
+
 ###The MIT License (MIT)
