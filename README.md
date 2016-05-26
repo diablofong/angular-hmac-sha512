@@ -16,7 +16,7 @@ AngularJS Module. that integrate cryptography functionality offers from the [cry
 
 #install(manual)
 
-* download [angular-hmac-sha512.js file](https://github.com/diablofong/angular-hmac-sha512/blob/master/src/angular-hmac-sha512.js)
+* download [angular-hmac-sha512.js file](https://github.com/diablofong/angular-hmac-sha512/blob/master/angular-hmac-sha512.js)
 * added javascript file to your app html file
 
 ```html
